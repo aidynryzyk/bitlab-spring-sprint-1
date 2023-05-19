@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<div th:insert="~{navbar.html}"></div>
+<div class="modal-dialog modal-lg mt-3">
+    <div class="modal-content">
+        <form action="/add" method="post">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label" for="exampleFormControlInput1">Name:</label>
+                    <input class="form-control" id="exampleFormControlInput1" name="name" placeholder="Name"
+                           type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="exampleFormControlTextarea1">Surname:</label>
+                    <input class="form-control" id="exampleFormControlTextarea1" name="surname" placeholder="Surname"
+                           type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="exampleFormControlDateInput1">Grade:</label>
+                    <input class="form-control" id="exampleFormControlDateInput1" max="100" min="0" name="grade"
+                           placeholder="Grade" type="number">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

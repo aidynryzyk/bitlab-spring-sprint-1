@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div th:insert="~{navbar.html}"></div>
+<div class="container">
+    <table class="mt-3 table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Mark</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:class="${student.getMark().equals('F') ? 'text-danger' : (student.getMark().equals('A') ? 'text-success' : '')}"
+            th:each="student : ${students}">
+            <td th:text="${student.getId()}"></td>
+            <td th:text="${student.getName()}"></td>
+            <td th:text="${student.getSurname()}"></td>
+            <td th:text="${student.getGrade()}"></td>
+            <td th:text="${student.getMark()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
